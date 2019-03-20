@@ -31,4 +31,4 @@ Route::get('/weixin/hei/{openid}','Weixin\WeixinUserController@blank');
 Route::post('/weixin/tag','Weixin\WeixinUserController@tag');
 
 //注册
-Route::post('reg','Login\AppUserController@reg');
+Route::post('/reg','Login\AppUserController@reg');
