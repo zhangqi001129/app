@@ -9,7 +9,7 @@
 namespace App\Http\Controllers\Login;
 
 
-class AppUserController
+class LoginUserController
 {
     public function reg(){
         $data=$_POST;
