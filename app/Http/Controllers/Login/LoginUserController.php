@@ -12,7 +12,6 @@ namespace App\Http\Controllers\Login;
 class LoginUserController
 {
     public function reg(){
-        $data=$_POST;
-        return $data;
+        echo '111';
     }
 }
