@@ -8,8 +8,9 @@
 
 namespace App\Http\Controllers\Login;
 
+use App\Http\Controllers\Controller;
 
-class LoginUserController
+class LoginUserController extends Controller
 {
     public function reg(){
         echo '111';

@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo date('Y-m-d H:i:s');
+    //return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //用户
@@ -31,4 +32,4 @@ Route::get('/weixin/hei/{openid}','Weixin\WeixinUserController@blank');
 Route::post('/weixin/tag','Weixin\WeixinUserController@tag');
 
 //注册
-Route::post('/reg','Login\LoginUserController@reg');
+Route::get('/login/reg','Login\LoginUserController@reg');
