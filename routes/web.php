@@ -1,0 +1,38 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//用户
+Route::get('/useradd', 'UserController@add');
+
+//测试
+Route::get('/weixin/token', 'Weixin\WxController@getAccessToken');
+//
+Route::get('/weixin/u/{openid}', 'Weixin\WxController@getUserInfo');
+
+Route::get('/weixin/tag', 'Weixin\WxController@tag');
+
+
+Route::get('/weixin/show', 'Weixin\WeixinUserController@show');
+//黑名单
+Route::get('/weixin/hei/{openid}','Weixin\WeixinUserController@blank');
+
+
+Route::post('/weixin/tag','Weixin\WeixinUserController@tag');
