@@ -18,21 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 //用户
 Route::get('/useradd', 'UserController@add');
-
 //测试
 Route::get('/weixin/token', 'Weixin\WxController@getAccessToken');
 //
 Route::get('/weixin/u/{openid}', 'Weixin\WxController@getUserInfo');
-
 Route::get('/weixin/tag', 'Weixin\WxController@tag');
-
-
 Route::get('/weixin/show', 'Weixin\WeixinUserController@show');
 //黑名单
 Route::get('/weixin/hei/{openid}','Weixin\WeixinUserController@blank');
-
-
 Route::post('/weixin/tag','Weixin\WeixinUserController@tag');
+
+//注册
+Route::post('reg','Login\AppUserController@reg');
