@@ -13,6 +13,6 @@ use App\Http\Controllers\Controller;
 class LoginUserController extends Controller
 {
     public function login(){
-      print_r($_POST);
+      echo '111';
     }
 }
