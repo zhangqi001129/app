@@ -15,14 +15,13 @@ class LoginUserController extends Controller
         public function login(Request $request){
             //  echo 111;
             //    exit;
-            $name = $request->input('u_name');
-            $password=$request->input('u_pwd');
+            $name = $request->input('name');
+            $password=$request->input('password');
             $data = [
-                'u_name'    =>  $name,
-                'u_pwd'     =>  $password
+                'name'    =>  $name,
+                'password'     =>  $password
             ];
-            //$url = 'http://passport.lara.com/api/login';
-            $url = 'http://passport.hz4155.cn/api/login';
+            $url = 'http://wlssb.lixiaonitongxue.top/api/login';
             $ch = curl_init($url);
             curl_setopt($ch,CURLOPT_HEADER,0);
             curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
