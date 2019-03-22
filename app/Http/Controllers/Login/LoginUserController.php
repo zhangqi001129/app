@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 class LoginUserController extends Controller
 {
         public function login(Request $request){
+            print_r($request);exit;
             $name = $request->input('name');
             $password=$request->input('password');
             $data = [
