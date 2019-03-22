@@ -33,3 +33,9 @@ Route::post('/reg','Login\LoginUserController@reg');
 
 //首頁
 Route::get('/start','Login\LoginUserController@show');
+
+
+
+
+//登录
+Route::post('/login','Login\LoginUserController@login');
