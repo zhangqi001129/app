@@ -65,19 +65,15 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
                 <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                    @if($is_login==1)
+                        <a href="">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                        <a href="http://pass.com/login?redirect={{$url}}">Login</a>
+                        <a href="http://pass.com/reg?redirect={{$url}}">Register</a>
+                    @endif
                 </div>
-            @endif
+
 
             <div class="content">
                 <div class="title m-b-md">

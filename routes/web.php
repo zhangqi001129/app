@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    echo date('Y-m-d H:i:s');
-    //return view('welcome');
-});
-
+Route::get('/', 'Index\IndexController@index')->middleware('check.login');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -33,3 +29,7 @@ Route::post('/weixin/tag','Weixin\WeixinUserController@tag');
 
 //注册
 Route::post('/reg','Login\LoginUserController@reg');
+
+
+//首頁
+Route::get('/start','Login\LoginUserController@show');

@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 
 class LoginUserController extends Controller
 {
-    public function reg(){
-        echo '111';
+    public function show(){
+       return view('login.show');
     }
 }
