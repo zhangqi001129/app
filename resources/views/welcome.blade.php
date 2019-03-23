@@ -68,6 +68,7 @@
                 <div class="top-right links">
                     @if($is_login==1)
                         <a href="">Home</a>
+                        <a href="http://pass.com/quit?redirect={{$url}}">退出</a>
                     @else
                         <a href="http://pass.com/login?redirect={{$url}}">Login</a>
                         <a href="http://pass.com/reg?redirect={{$url}}">Register</a>
