@@ -27,8 +27,6 @@ Route::get('/weixin/show', 'Weixin\WeixinUserController@show');
 Route::get('/weixin/hei/{openid}','Weixin\WeixinUserController@blank');
 Route::post('/weixin/tag','Weixin\WeixinUserController@tag');
 
-
-
 //测试注册 登录
 Route::post('/reg','Test\UserController@reg');
 Route::post('/login','Test\UserController@login');
