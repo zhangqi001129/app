@@ -15,11 +15,11 @@ class UserController extends Controller
     public function reg(Request $request){
         $name = $request->input('name');
         $pwd=$request->input('pwd');
-        echo $name."注册成功";
+        echo "$name"."注册成功";
     }
     public function login(Request $request){
         $name = $request->input('name');
         $pwd=$request->input('pwd');
-        echo $name."登录成功";
+        echo "$name"."登录成功";
     }
 }
