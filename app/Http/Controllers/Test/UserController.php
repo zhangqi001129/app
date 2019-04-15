@@ -86,14 +86,8 @@ class UserController extends Controller
 
 
     public  function code(){
-        $redis=new Redis();
-        $redis->connect("127.0.0.1",6379);
         $key="token_app";
-        $token=$redis->spop($key);
+        $token=Redis::spop($key);
         return view('test.code',['token'=>$token]);
-    }
-    //二维码接口测试
-    public function  codelogin(){
-        return view('test.token');
     }
 }

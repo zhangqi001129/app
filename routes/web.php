@@ -37,4 +37,3 @@ Route::post('/add','Test\UserController@add');
 
 //二维码登录
 Route::get('/code', 'Test\UserController@code');
-Route::get('/codelogin', 'Test\UserController@codelogin');
