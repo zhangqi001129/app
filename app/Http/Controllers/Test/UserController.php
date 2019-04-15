@@ -86,11 +86,13 @@ class UserController extends Controller
 
 public function tokenlogin(Request $request){
     $name = $request->input('name');
+    echo $name;
     $pwd=$request->input('pwd');
     $where=[
         'name'=>$name,
     ];
     $rs=UserModel::where($where)->first();
+    print_r($rs);
     $uid=$rs['id'];
     if(!empty($uid)){
         $response = [
@@ -115,5 +117,13 @@ public function tokenlogin(Request $request){
     }
     public function coderedis(Request $request){
         $token = $request->input('token');
+        $uid = $request->input('uid');
+        Redis::set($token,$uid);
+        Redis::setTimeout($token,60);
+        $id=Redis::get($token);
+        $response = [
+            'id' => id,
+        ];
+        return $response;
     }
 }
