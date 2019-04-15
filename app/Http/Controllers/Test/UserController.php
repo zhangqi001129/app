@@ -89,7 +89,6 @@ public function tokenlogin(Request $request){
     $pwd=$request->input('pwd');
     $where=[
         'name'=>$name,
-        'pwd'=>$pwd
     ];
     $rs=UserModel::where($where)->first();
     if($rs){
