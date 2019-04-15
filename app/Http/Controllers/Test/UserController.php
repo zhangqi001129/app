@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Test;
 use Illuminate\Http\Request;
 use App\Model\UserModel;
+use App\Model\NumModel;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -49,11 +50,21 @@ class UserController extends Controller
             ];
         }else{
             $response = [
-                'errno' => 0,
+                'errno' => 40003,
                 'msg' => '登录失败',
             ];
         }
         return $response;
     }
-
+ public  function select(Request $request){
+     $num = $request->input('num');
+     $rs=NumModel::get();
+     if($num!=$rs['api_num']){
+         $response = [
+             'errno' => 40001,
+             'msg' => 'app需要升级至最新版本',
+         ];
+     }
+     return $response;
+ }
 }
