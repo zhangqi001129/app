@@ -58,9 +58,8 @@ class UserController extends Controller
     }
  public  function select(Request $request){
      $num = $request->input('num');
-     $rs=NumModel::select();
-     var_dump($rs);exit;
-     if($num!=$rs->api_num){
+     $rs=NumModel::first();
+     if($num!=$rs['api_num']){
          $response = [
              'errno' => 40001,
              'msg' => 'app需要升级至最新版本',
