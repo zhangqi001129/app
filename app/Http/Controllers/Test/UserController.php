@@ -41,7 +41,7 @@ class UserController extends Controller
             'name'=>$name,
             'pwd'=>$pwd
         ];
-        $rs=UserModel::where($where)->first();
+        $rs=UserModel::where($where)->get();
         if($rs){
             $response = [
                 'errno' => 0,
