@@ -58,7 +58,7 @@ class UserController extends Controller
     }
  public  function select(Request $request){
      $num = $request->input('num');
-     $rs=NumModel::select()->toArray();
+     $rs=NumModel::select();
      if($num!=$rs['api_num']){
          $response = [
              'errno' => 40001,
