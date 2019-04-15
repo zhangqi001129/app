@@ -92,7 +92,7 @@ public function tokenlogin(Request $request){
     ];
     $rs=UserModel::where($where)->first();
     $uid=$rs['id'];
-    if($uid){
+    if(!empty($uid)){
         $response = [
             'errno' => 0,
             'uid'=>$uid,
