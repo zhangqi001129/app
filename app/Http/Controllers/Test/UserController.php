@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers\Test;
 use Illuminate\Http\Request;
+use App\Model\UserModel;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -15,11 +16,42 @@ class UserController extends Controller
     public function reg(Request $request){
         $name = $request->input('name');
         $pwd=$request->input('pwd');
-        echo "$name"."注册成功";
+        $data=[
+            'name'=>$name,
+            'pwd'=>$pwd
+        ];
+        $rs =  UserModel::insertGetId($data);
+        if ($rs) {
+            $response = [
+                'errno' => 0,
+                'msg' => '注册成功',
+            ];
+        } else {
+            $response = [
+                'errno' => 40002,
+                'msg' => '注册失败'
+            ];
+        }
+        return $response;
     }
     public function login(Request $request){
         $name = $request->input('name');
         $pwd=$request->input('pwd');
-        echo "$name"."登录成功";
+        $where=[
+            'name'=>$name,
+            'pwd'=>$pwd
+        ];
+        $rs=UserModel::where($where)->first();
+        if($rs){
+            $response = [
+                'errno' => 0,
+                'msg' => '登录成功',
+            ];
+        }else{
+            $response = [
+                'errno' => 0,
+                'msg' => '登录失败',
+            ];
+        }
     }
 }
