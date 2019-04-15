@@ -16,6 +16,7 @@ class UserController extends Controller
     public function reg(Request $request){
         $name = $request->input('name');
         $pwd=$request->input('pwd');
+        echo $pwd;exit;
         $data=[
             'name'=>$name,
             'pwd'=>$pwd
