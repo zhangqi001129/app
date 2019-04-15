@@ -71,10 +71,7 @@ class UserController extends Controller
      return $response;
  }
     public  function add(){
-        $rs=useModel::get()->count();
-        for(var i=0;i<$rs;i++){
             $rs=useModel::limit(i)->get()->toArray();
-        }
         $response = [
             'data' => $rs,
         ];
