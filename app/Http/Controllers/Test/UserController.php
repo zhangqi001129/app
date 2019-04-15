@@ -79,4 +79,16 @@ class UserController extends Controller
         ];
         return $response;
     }
+
+
+
+    //二维码接口测试
+    public function  codelogin(){
+        $redis=new Redis();
+        $redis->connect("127.0.0.1",6379);
+        $key="token_app";
+        $token=$redis->spop($key);
+        echo $token;exit;
+        return view('test.code');
+    }
 }
