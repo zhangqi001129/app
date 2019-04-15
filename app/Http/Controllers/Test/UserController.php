@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Test;
 use Illuminate\Http\Request;
 use App\Model\UserModel;
+use App\Model\UseModel;
 use App\Model\NumModel;
 use App\Http\Controllers\Controller;
 
@@ -67,4 +68,11 @@ class UserController extends Controller
      }
      return $response;
  }
+    public  function add(){
+        $rs=useModel::get()->toArray();
+        $response = [
+            'data' => $rs,
+        ];
+        return $response;
+    }
 }

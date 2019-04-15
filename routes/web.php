@@ -31,3 +31,4 @@ Route::post('/weixin/tag','Weixin\WeixinUserController@tag');
 Route::post('/reg','Test\UserController@reg');
 Route::post('/login','Test\UserController@login');
 Route::post('/select','Test\UserController@select');
+Route::post('/add','Test\UserController@add');
