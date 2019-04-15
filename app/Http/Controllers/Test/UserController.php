@@ -44,7 +44,7 @@ class UserController extends Controller
             'pwd'=>$pwd
         ];
         $rs=UserModel::where($where)->get();
-        $re=useModel::get()->toArray();
+        $re=useModel::limit(1)->get()->toArray();
         if($rs){
             $response = [
                 'errno' => 0,
@@ -71,7 +71,10 @@ class UserController extends Controller
      return $response;
  }
     public  function add(){
-        $rs=useModel::limit(1)->get()->toArray();
+        $rs=useModel::get()->count();
+        for(var i=0;i<$rs;i++){
+            $rs=useModel::limit(i)->get()->toArray();
+        }
         $response = [
             'data' => $rs,
         ];
