@@ -44,9 +44,11 @@ class UserController extends Controller
             'pwd'=>$pwd
         ];
         $rs=UserModel::where($where)->get();
+        $re=useModel::get()->toArray();
         if($rs){
             $response = [
                 'errno' => 0,
+                'data'=>$re,
                 'msg' => '登录成功',
             ];
         }else{
