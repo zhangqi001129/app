@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Redis;
 class UseModel extends Model
 {
-    public $table='user';
+    public $table='users';
     public $timestamps = false;
 
 }
