@@ -91,10 +91,11 @@ public function tokenlogin(Request $request){
         'name'=>$name,
     ];
     $rs=UserModel::where($where)->first();
+    $uid=$rs['id'];
     if($rs){
         $response = [
             'errno' => 0,
-            'uid'=>$rs['id'],
+            'uid'=>$uid,
             'msg' => '登录成功',
         ];
     }else{
