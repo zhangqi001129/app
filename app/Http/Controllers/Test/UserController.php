@@ -12,6 +12,7 @@ use App\Model\UserModel;
 use App\Model\UseModel;
 use App\Model\NumModel;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
 
 class UserController extends Controller
 {
@@ -82,13 +83,17 @@ class UserController extends Controller
 
 
 
-    //二维码接口测试
-    public function  codelogin(){
+
+
+    public  function code(){
         $redis=new Redis();
         $redis->connect("127.0.0.1",6379);
         $key="token_app";
         $token=$redis->spop($key);
-        echo $token;exit;
-        return view('test.code');
+        return view('test.code',['token'=>$token]);
+    }
+    //二维码接口测试
+    public function  codelogin(){
+        return view('test.token');
     }
 }
