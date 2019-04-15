@@ -60,7 +60,7 @@ class UserController extends Controller
      $num = $request->input('num');
      $rs=NumModel::get()->toArray();
      print_r($rs);
-     echo $rs['api_num'];
+     echo $rs[]['api_num'];
      if($num!=$rs['api_num']){
          $response = [
              'errno' => 40001,
