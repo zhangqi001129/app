@@ -42,7 +42,6 @@ class UserController extends Controller
             'pwd'=>$pwd
         ];
         $rs=UserModel::where($where)->get();
-        print_r($rs);exit;
         if($rs){
             $response = [
                 'errno' => 0,
@@ -54,5 +53,7 @@ class UserController extends Controller
                 'msg' => '登录失败',
             ];
         }
+        return $response;
     }
+
 }
