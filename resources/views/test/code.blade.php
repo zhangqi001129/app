@@ -11,7 +11,8 @@
 
 <div id="qrcode"></div>
 </body>
-<script src="./qrcodejs-master/qrcode.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/qrcode.js"></script>
 </html>
 <script>
         var qrcode = new QRCode('qrcode', {

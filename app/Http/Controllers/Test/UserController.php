@@ -84,10 +84,36 @@ class UserController extends Controller
 
 
 
+public function tokenlogin(Request $request){
+    $name = $request->input('name');
+    $pwd=$request->input('pwd');
+    $where=[
+        'name'=>$name,
+        'pwd'=>$pwd
+    ];
+    $rs=UserModel::where($where)->first();
+    if($rs){
+        $response = [
+            'errno' => 0,
+            'uid'=>$rs['id'],
+            'msg' => '登录成功',
+        ];
+    }else{
+        $response = [
+            'errno' => 40003,
+            'msg' => '登录失败',
+        ];
+    }
+    return $response;
+}
+
 
     public  function code(){
         $key="token_app";
         $token=Redis::spop($key);
         return view('test.code',['token'=>$token]);
+    }
+    public function coderedis(Request $request){
+        $token = $request->input('token');
     }
 }
