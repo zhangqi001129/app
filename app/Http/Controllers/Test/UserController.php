@@ -128,8 +128,7 @@ public function tokenlogin(Request $request){
     public function coderedis(Request $request){
         $token = $request->input('token');
         $uid = $request->input('uid');
-        $res=Redis::set($token,$uid);
-        Redis::setTimeout($token,60);
+        $res=Redis::set($token,$uid,60);
         if($res){
             $response = [
                 'errno' => 0,
