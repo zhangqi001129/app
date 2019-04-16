@@ -151,11 +151,6 @@ public function tokenlogin(Request $request){
                 'errno' => 0,
                 'msg' => '登录成功',
             ];
-        }else{
-            $response = [
-                'errno' => 40003,
-                'msg' => '登录失败',
-            ];
         }
         return $response;
     }
