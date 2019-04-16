@@ -35,6 +35,7 @@ $(function(){
             },
             success:function(data){
                 alert(data.msg);
+                location.href='/useradd';
             },
         })
     },1000)
