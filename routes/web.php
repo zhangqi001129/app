@@ -39,3 +39,4 @@ Route::post('/add','Test\UserController@add');
 Route::get('/code', 'Test\UserController@code');
 Route::post('/tokenlogin','Test\UserController@tokenlogin');
 Route::post('/coderedis', 'Test\UserController@coderedis');
+Route::post('/loginredis', 'Test\UserController@loginredis');

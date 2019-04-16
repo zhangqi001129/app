@@ -144,4 +144,20 @@ public function tokenlogin(Request $request){
         }
         return $response;
     }
+    public  function loginredis(Request $request){
+        $token = $request->input('token');
+        $id=Redis::get($token);
+        if($id){
+            $response = [
+                'errno' => 0,
+                'msg' => '登录成功',
+            ];
+        }else{
+            $response = [
+                'errno' => 40003,
+                'msg' => '登录失败',
+            ];
+        }
+        return $response;
+    }
 }
